@@ -3,15 +3,19 @@ $grid__bp-sm: 576;
 $grid__bp-md: 768;
 $grid__bp-lg: 992;
 $grid__bp-xl: 1200;
-$grid__bp-xxl: 1400;
+$grid__bp-xxl: 1440;
 $grid__cols: 12;
+$grid__gutter: 1.5rem;
+$grid__gutter-y: 0.2rem;
 
 $map-grid-props: (
   '': 0,
+  '-xs': $grid__bp-xs,
   '-sm': $grid__bp-sm,
   '-md': $grid__bp-md,
   '-lg': $grid__bp-lg,
-  '-xl': $grid__bp-xl
+  '-xl': $grid__bp-xl,
+  '-xxl': $grid__bp-xxl
 );
 
 @mixin create-mq($breakpoint) {
@@ -31,7 +35,9 @@ $map-grid-props: (
     }
     @for $i from 1 through $grid-cols {
       .sd_col#{$modifier}-#{$i} {
-        flex-basis: (100 / ($grid-cols / $i) ) * 1%;
+        flex: 0 0 auto;
+        width: (100 / ($grid-cols / $i) ) * 1% ;
+        box-sizing: border-box;
       }
       .sd_col#{$modifier}-offset-#{$i} {
         margin-left: (100 / ($grid-cols / $i) ) * 1%;
@@ -41,18 +47,63 @@ $map-grid-props: (
 }
 
 .sd_container {
-  max-width: $grid__bp-md * 1px;
-  margin: 0 auto;
+  box-sizing: border-box;
+  max-width: $grid__bp-xxl * 1.5px;
+  width: 100%;
+  padding-right: calc(#{$grid__gutter} * 0.5);
+  padding-left: calc(#{$grid__gutter} * 0.5);
+  margin-right: auto;
+  margin-left: auto;
+
   &.sd_container--fluid {
     margin: 0;
     max-width: 100%;
   }
-  .sd-row {
+}
+.sd_row {
+    box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
+    flex: 1 0 100%;
     width: 100%;
+    margin-top: calc(-1 * #{$grid__gutter-y});
+    margin-right: calc(-0.5 * #{$grid__gutter});
+    margin-left: calc(-0.5 * #{$grid__gutter});
+    & > * {
+      flex-shrink: 0;
+      width: 100%;
+      max-width: 100%;
+      padding-right: calc(#{$grid__gutter} * 0.5);
+      padding-left: calc(#{$grid__gutter} * 0.5);
+      margin-top: $grid__gutter-y;
+    }
+    
+}
+@each $modifier , $breakpoint in $map-grid-props {
+  @include create-col-classes($modifier, $grid__cols, $breakpoint);
+}
+@media (min-width: 576px) {
+  .sd_container {
+    max-width: 540px;
   }
-  @each $modifier , $breakpoint in $map-grid-props {
-    @include create-col-classes($modifier, $grid__cols, $breakpoint);
+}
+@media (min-width: 768px) {
+  .sd_container-md, .sd_container-sm, .sd_container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .sd_container-lg, .sd_container-md, .sd_container-sm, .sd_container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .sd_container-xl, .sd_container-lg, .sd_container-md, .sd_container-sm, .sd_container {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .sd_container-xxl, .sd_container-xl, .sd_container-lg, .sd_container-md, .sd_container-sm, .sd_container {
+    max-width: 1320px;
   }
 }

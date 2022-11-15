@@ -1,22 +1,29 @@
-import logo from './logo.svg';
+import Container from './components/Container';
+import Row from './components/Row';
+import Column from "./components/Column";
+import "./assets/grid.scss"
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Container>
+        <Row>
+          <Column lg={12}>
+            <h1>React Portfolio</h1>
+          </Column>
+        </Row>
+        <Row>
+          <Column lg={4} style={{ backgroundColor: "green" }}>
+            adsfadsf
+          </Column>
+          <Column lg={4} style={{ backgroundColor: "green" }}>
+            adsfadsf
+          </Column>
+          <Column lg={4} style={{ backgroundColor: "green" }}>
+            adsfadsf
+          </Column>
+        </Row>
+      </Container>
     </div>
   );
 }

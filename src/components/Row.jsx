@@ -12,7 +12,14 @@ const Row = ({
     justify,
     wrap
   }
-  return <div style={defaultStyles} className="sd_row">{children}</div>;
+  return (
+    <div
+      style={defaultStyles}
+      className={`sd_row${className ? ` ${className}` : ""}`}
+    >
+      {children}
+    </div>
+  );
 };
 
 Row.propTypes = {
