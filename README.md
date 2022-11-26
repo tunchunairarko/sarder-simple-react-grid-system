@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# Sarder Simple React Grid System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Setting out layout or grid systems for React projects is often a nightmare. We often have to use big chunky frameworks (yes Material UI, I'm talking about ya!) to make responsive React apps and components. This leaves developers with limited opportunities in terms of customization and capability to override the design systems of these frameworks. Also, each frameworks have their own steep learning curve and architecture, which makes it even harder and time-consuming. Sarder Simple React Grid System has been written in order to make your React frontend dev journey easier. 
 
-## Available Scripts
+What if you want to build a custom design system based on your company's or your client's requirements, but you don't wanna spend too much time on responsiveness, layout and stuff? Using the chunky UI frameworks (especially Material!) would provide so much bottlenecks to you. Let this npm package make your life easier by taking care of the layout system for you!
 
-In the project directory, you can run:
+## Installation instructions
 
-### `npm start`
+### For npm users
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+npm i sarder-simple-react-grid-system --save
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### For yarn users
 
-### `npm test`
+```bash
+yarn add sarder-simple-react-grid-system
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Piece of advice
 
-### `npm run build`
+This teeny tiny library is using Sass under the hood. You might need `node-sass` to be configured in your project.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## How to use
+The Sarder Simple React Grid System follows the simplest Container, Row, Column convention for setting up grid system (similar to Bootstrap). The hierarchy of the components are as follows:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Container
+    - Row
+        - Column
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Basic example
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```jsx
+<Container>
+    <Row>
+        <Col sm={4}>
+            <h2>Maria</h2>
+        </Col>
+        <Col sm={4}>
+            <h2>I love</h2>
+        </Col>
+        <Col sm={4}>
+            <h2>SSRGS (yeah I know the package name is too long)</h2>
+        </Col>
+    </Row>
+</Container>
+```

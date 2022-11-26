@@ -1,10 +1,15 @@
 {
   "name": "sarder-simple-react-grid-system",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A stupidly simple bootstrap and material-based grid system for React ",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
-    "build": "rm -rf dist && NODE_ENV=production babel assets components --out-dir dist --copy-files"
+    "build": "rm -rf dist && NODE_ENV=production babel src --out-dir dist --copy-files"
   },
   "repository": {
     "type": "git",
