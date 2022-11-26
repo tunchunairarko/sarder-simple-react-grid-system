@@ -1,8 +1,32 @@
 {
   "name": "sarder-simple-react-grid-system",
   "version": "0.1.0",
-  "private": true,
+  "description": "A stupidly simple bootstrap and material-based grid system for React ",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && NODE_ENV=production babel src --out-dir dist --copy-files"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tunchunairarko/sarder-simple-react-grid-system.git"
+  },
+  "keywords": [
+    "react",
+    "react-grid",
+    "layout"
+  ],
+  "author": "Md Rakin Sarder",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tunchunairarko/sarder-simple-react-grid-system/issues"
+  },
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -13,18 +37,7 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
+  "homepage": "https://github.com/tunchunairarko/sarder-simple-react-grid-system#readme",
   "browserslist": {
     "production": [
       ">0.2%",
@@ -36,5 +49,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.20.2",
+    "@babel/preset-env": "^7.20.2"
   }
 }
