@@ -82,27 +82,34 @@ $map-grid-props: (
 @each $modifier , $breakpoint in $map-grid-props {
   @include create-col-classes($modifier, $grid__cols, $breakpoint);
 }
-@media (min-width: 576px) {
+
+@media (min-width: $grid__bp-xs) {
+  .sd_container {
+    max-width: 460px;
+  }
+}
+
+@media (min-width: $grid__bp-sm) {
   .sd_container {
     max-width: 540px;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: $grid__bp-md) {
   .sd_container-md, .sd_container-sm, .sd_container {
     max-width: 720px;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: $grid__bp-lg) {
   .sd_container-lg, .sd_container-md, .sd_container-sm, .sd_container {
     max-width: 960px;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: $grid__bp-xl) {
   .sd_container-xl, .sd_container-lg, .sd_container-md, .sd_container-sm, .sd_container {
     max-width: 1140px;
   }
 }
-@media (min-width: 1400px) {
+@media (min-width: $grid__bp-xxl) {
   .sd_container-xxl, .sd_container-xl, .sd_container-lg, .sd_container-md, .sd_container-sm, .sd_container {
     max-width: 1320px;
   }
