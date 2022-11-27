@@ -1,6 +1,6 @@
 {
   "name": "sarder-simple-react-grid-system",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A stupidly simple bootstrap and material-based grid system for React ",
   "main": "dist/index.js",
   "module": "dist/index.js",
